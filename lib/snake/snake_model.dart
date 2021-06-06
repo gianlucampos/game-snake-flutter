@@ -1,14 +1,16 @@
+enum Direction { UP, DOWN, LEFT, RIGHT }
+
 class SnakeModel {
   int _x = 100;
   int _y = 100;
   int _width = 10;
   int _height = 10;
+  Direction _direction = Direction.RIGHT;
 
   void up() => x -= 10;
   void down() => x += 10;
   void left() => y -= 10;
   void right() => y += 10;
-  void increaseSize() => width += 10;
 
   get x => this._x;
 
@@ -25,6 +27,10 @@ class SnakeModel {
   get height => this._height;
 
   set height(value) => this._height = value;
+
+  get direction => this._direction;
+
+  set direction(value) => this._direction = value;
 
   @override
   String toString() {
